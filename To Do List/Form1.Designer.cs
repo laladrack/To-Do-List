@@ -40,7 +40,12 @@
             saveButton = new Button();
             toDoListView = new DataGridView();
             dateLabel = new Label();
+            tagLabel = new Label();
+            tagsTextbox = new TextBox();
+            label4 = new Label();
+            numericUpDown1 = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)toDoListView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -58,7 +63,7 @@
             // titleTextBox
             // 
             titleTextBox.BackColor = Color.White;
-            titleTextBox.Location = new Point(12, 120);
+            titleTextBox.Location = new Point(12, 118);
             titleTextBox.Name = "titleTextBox";
             titleTextBox.PlaceholderText = "Title of your task";
             titleTextBox.Size = new Size(1336, 31);
@@ -68,7 +73,7 @@
             // descriptionTextbox
             // 
             descriptionTextbox.BackColor = Color.White;
-            descriptionTextbox.Location = new Point(12, 188);
+            descriptionTextbox.Location = new Point(12, 180);
             descriptionTextbox.Name = "descriptionTextbox";
             descriptionTextbox.PlaceholderText = "Make miojo";
             descriptionTextbox.Size = new Size(1336, 31);
@@ -77,7 +82,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 92);
+            label2.Location = new Point(12, 90);
             label2.Name = "label2";
             label2.Size = new Size(48, 25);
             label2.TabIndex = 3;
@@ -86,7 +91,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 160);
+            label3.Location = new Point(12, 152);
             label3.Name = "label3";
             label3.Size = new Size(106, 25);
             label3.TabIndex = 4;
@@ -94,39 +99,43 @@
             // 
             // newButton
             // 
-            newButton.Location = new Point(12, 236);
+            newButton.Location = new Point(12, 282);
             newButton.Name = "newButton";
             newButton.Size = new Size(321, 39);
             newButton.TabIndex = 5;
             newButton.Text = "New";
             newButton.UseVisualStyleBackColor = true;
+            newButton.Click += newButton_Click;
             // 
             // editButton
             // 
-            editButton.Location = new Point(352, 236);
+            editButton.Location = new Point(352, 282);
             editButton.Name = "editButton";
             editButton.Size = new Size(321, 39);
             editButton.TabIndex = 6;
             editButton.Text = "Edit";
             editButton.UseVisualStyleBackColor = true;
+            editButton.Click += editButton_Click;
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(690, 236);
+            deleteButton.Location = new Point(690, 282);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(321, 39);
             deleteButton.TabIndex = 7;
             deleteButton.Text = "Delete";
             deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
             // 
             // saveButton
             // 
-            saveButton.Location = new Point(1027, 236);
+            saveButton.Location = new Point(1027, 282);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(321, 39);
             saveButton.TabIndex = 8;
             saveButton.Text = "Save";
             saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveButton_Click;
             // 
             // toDoListView
             // 
@@ -134,23 +143,60 @@
             toDoListView.BackgroundColor = Color.White;
             toDoListView.BorderStyle = BorderStyle.None;
             toDoListView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            toDoListView.Location = new Point(12, 301);
+            toDoListView.Location = new Point(12, 333);
             toDoListView.Name = "toDoListView";
             toDoListView.RowHeadersWidth = 62;
-            toDoListView.Size = new Size(1336, 613);
+            toDoListView.Size = new Size(1336, 540);
             toDoListView.TabIndex = 9;
             toDoListView.CellContentClick += toDoListView_CellContentClick;
             // 
             // dateLabel
             // 
-            dateLabel.AutoSize = true;
             dateLabel.BackColor = Color.Transparent;
-            dateLabel.Location = new Point(1260, 45);
+            dateLabel.Location = new Point(1170, 44);
             dateLabel.Name = "dateLabel";
-            dateLabel.Size = new Size(49, 25);
+            dateLabel.Size = new Size(161, 27);
             dateLabel.TabIndex = 10;
             dateLabel.Text = "Date";
-            dateLabel.TextAlign = ContentAlignment.MiddleLeft;
+            dateLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tagLabel
+            // 
+            tagLabel.AutoSize = true;
+            tagLabel.Location = new Point(9, 214);
+            tagLabel.Name = "tagLabel";
+            tagLabel.Size = new Size(51, 25);
+            tagLabel.TabIndex = 12;
+            tagLabel.Text = "Tags:";
+            // 
+            // tagsTextbox
+            // 
+            tagsTextbox.BackColor = Color.White;
+            tagsTextbox.Location = new Point(12, 245);
+            tagsTextbox.Name = "tagsTextbox";
+            tagsTextbox.PlaceholderText = "Food";
+            tagsTextbox.Size = new Size(999, 31);
+            tagsTextbox.TabIndex = 11;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(1027, 216);
+            label4.Name = "label4";
+            label4.Size = new Size(72, 25);
+            label4.TabIndex = 14;
+            label4.Text = "Priority:";
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(1027, 246);
+            numericUpDown1.Margin = new Padding(5);
+            numericUpDown1.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
+            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(321, 31);
+            numericUpDown1.TabIndex = 15;
+            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // ToDoList
             // 
@@ -158,6 +204,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1360, 926);
+            Controls.Add(numericUpDown1);
+            Controls.Add(label4);
+            Controls.Add(tagLabel);
+            Controls.Add(tagsTextbox);
             Controls.Add(dateLabel);
             Controls.Add(toDoListView);
             Controls.Add(saveButton);
@@ -174,6 +224,7 @@
             Text = "To-Do App";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)toDoListView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -191,5 +242,9 @@
         private Button saveButton;
         private DataGridView toDoListView;
         private Label dateLabel;
+        private Label tagLabel;
+        private TextBox tagsTextbox;
+        private Label label4;
+        private NumericUpDown numericUpDown1;
     }
 }
