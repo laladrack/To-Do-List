@@ -34,7 +34,6 @@
             descriptionTextbox = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            newButton = new Button();
             editButton = new Button();
             deleteButton = new Button();
             saveButton = new Button();
@@ -97,19 +96,9 @@
             label3.TabIndex = 4;
             label3.Text = "Description:";
             // 
-            // newButton
-            // 
-            newButton.Location = new Point(12, 282);
-            newButton.Name = "newButton";
-            newButton.Size = new Size(321, 39);
-            newButton.TabIndex = 5;
-            newButton.Text = "New";
-            newButton.UseVisualStyleBackColor = true;
-            newButton.Click += newButton_Click;
-            // 
             // editButton
             // 
-            editButton.Location = new Point(352, 282);
+            editButton.Location = new Point(696, 282);
             editButton.Name = "editButton";
             editButton.Size = new Size(321, 39);
             editButton.TabIndex = 6;
@@ -119,7 +108,7 @@
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(690, 282);
+            deleteButton.Location = new Point(355, 282);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(321, 39);
             deleteButton.TabIndex = 7;
@@ -129,7 +118,7 @@
             // 
             // saveButton
             // 
-            saveButton.Location = new Point(1027, 282);
+            saveButton.Location = new Point(12, 282);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(321, 39);
             saveButton.TabIndex = 8;
@@ -213,7 +202,6 @@
             Controls.Add(saveButton);
             Controls.Add(deleteButton);
             Controls.Add(editButton);
-            Controls.Add(newButton);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(descriptionTextbox);
@@ -236,7 +224,6 @@
         private TextBox descriptionTextbox;
         private Label label2;
         private Label label3;
-        private Button newButton;
         private Button editButton;
         private Button deleteButton;
         private Button saveButton;

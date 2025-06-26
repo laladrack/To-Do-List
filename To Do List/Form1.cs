@@ -36,7 +36,7 @@ namespace To_Do_List
             titleTextBox.Text = "";
             descriptionTextbox.Text = "";
             tagsTextbox.Text = "";
-            priorityNumber.Value = 0;
+            priorityNumber.Value = 1;
         }
 
         private void editButton_Click(object sender, EventArgs e)
