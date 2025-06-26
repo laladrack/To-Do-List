@@ -43,9 +43,9 @@
             tagLabel = new Label();
             tagsTextbox = new TextBox();
             label4 = new Label();
-            numericUpDown1 = new NumericUpDown();
+            priorityNumber = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)toDoListView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)priorityNumber).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -187,16 +187,16 @@
             label4.TabIndex = 14;
             label4.Text = "Priority:";
             // 
-            // numericUpDown1
+            // priorityNumber
             // 
-            numericUpDown1.Location = new Point(1027, 246);
-            numericUpDown1.Margin = new Padding(5);
-            numericUpDown1.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
-            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(321, 31);
-            numericUpDown1.TabIndex = 15;
-            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            priorityNumber.Location = new Point(1027, 246);
+            priorityNumber.Margin = new Padding(5);
+            priorityNumber.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
+            priorityNumber.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            priorityNumber.Name = "priorityNumber";
+            priorityNumber.Size = new Size(321, 31);
+            priorityNumber.TabIndex = 15;
+            priorityNumber.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // ToDoList
             // 
@@ -204,7 +204,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1360, 926);
-            Controls.Add(numericUpDown1);
+            Controls.Add(priorityNumber);
             Controls.Add(label4);
             Controls.Add(tagLabel);
             Controls.Add(tagsTextbox);
@@ -224,7 +224,7 @@
             Text = "To-Do App";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)toDoListView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)priorityNumber).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -245,6 +245,6 @@
         private Label tagLabel;
         private TextBox tagsTextbox;
         private Label label4;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown priorityNumber;
     }
 }

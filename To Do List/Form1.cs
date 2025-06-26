@@ -21,7 +21,6 @@ namespace To_Do_List
             todoList.Columns.Add("Description");
             todoList.Columns.Add("Tag");
             todoList.Columns.Add("Priority");
-            todoList.Columns.Add("Status");
 
             //datagridview to datasource
             toDoListView.DataSource = todoList;
@@ -37,6 +36,7 @@ namespace To_Do_List
             titleTextBox.Text = "";
             descriptionTextbox.Text = "";
             tagsTextbox.Text = "";
+            priorityNumber.Value = 0;
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -66,15 +66,18 @@ namespace To_Do_List
             {
                 todoList.Rows[toDoListView.CurrentCell.RowIndex]["Title"] = titleTextBox.Text;
                 todoList.Rows[toDoListView.CurrentCell.RowIndex]["Description"] = descriptionTextbox.Text;
+                todoList.Rows[toDoListView.CurrentCell.RowIndex]["Tag"] = tagsTextbox.Text;
+                todoList.Rows[toDoListView.CurrentCell.RowIndex]["Priority"] = priorityNumber.Value;
             }
             else
             {
-                todoList.Rows.Add(titleTextBox.Text, descriptionTextbox.Text, tagsTextbox.Text);
+                todoList.Rows.Add(titleTextBox.Text, descriptionTextbox.Text, tagsTextbox.Text, priorityNumber.Value);
             }
             // clear fields
             titleTextBox.Text = "";
             descriptionTextbox.Text = "";
             tagsTextbox.Text = "";
+            priorityNumber.Value = 1;
             isEditing = false;
         }
     }
